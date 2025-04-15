@@ -48,7 +48,9 @@ int countPairs3(int* arr, int len, int value) {
             int mid = low + (high - low) / 2;
             if (arr[mid] >= target) {
                 high = mid - 1;
-                if (arr[mid] == target) first = mid;
+                if (arr[mid] == target) {
+                    first = mid;
+                }
             } else {
                 low = mid + 1;
             }
@@ -61,7 +63,9 @@ int countPairs3(int* arr, int len, int value) {
                 int mid = low + (high - low) / 2;
                 if (arr[mid] <= target) {
                     low = mid + 1;
-                    if (arr[mid] == target) last = mid;
+                    if (arr[mid] == target) {
+                        last = mid;
+                    }
                 } else {
                     high = mid - 1;
                 }
