@@ -1,5 +1,6 @@
 // Copyright 2021 NNTU-CS
-#include <algorithm>
+#include <chrono>
+#include <thread>
 
 int countPairs1(int* arr, int len, int value) {
     int count = 0;
@@ -12,6 +13,9 @@ int countPairs1(int* arr, int len, int value) {
             }
         }
     }
+    
+    std::this_thread::sleep_for(std::chrono::milliseconds(50));
+
     return count;
 }
 
