@@ -1,4 +1,5 @@
 // Copyright 2021 NNTU-CS
+#include <algorithm>
 #include <chrono>
 #include <thread>
 
@@ -13,13 +14,13 @@ int countPairs1(int* arr, int len, int value) {
             }
         }
     }
-    
-    std::this_thread::sleep_for(std::chrono::milliseconds(50));
 
+    std::this_thread::sleep_for(std::chrono::milliseconds(50));
     return count;
 }
 
 int countPairs2(int* arr, int len, int value) {
+    std::sort(arr, arr + len);
     int count = 0;
     int left = 0, right = len - 1;
 
@@ -40,6 +41,7 @@ int countPairs2(int* arr, int len, int value) {
 }
 
 int countPairs3(int* arr, int len, int value) {
+    std::sort(arr, arr + len);
     int count = 0;
     for (int i = 0; i < len - 1; ++i) {
         if (i > 0 && arr[i] == arr[i - 1]) continue;
